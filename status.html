@@ -4,7 +4,7 @@
   $(if refresh-timeout)
   <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
   $(endif)
-	<title>Portal Gratuito Cautivo</title>
+	<title>ZonaWifi</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -42,6 +42,28 @@
     return false;
       }
   </script>
+  
+  <style type="text/css">
+<!--
+
+
+body {
+    background-color: #3686BB;
+}
+
+td{
+	color:#FFF;	
+	}
+	
+h3 {
+	color:#FFF;
+	text-shadow:0 0 0.2em #00ff00, 0 0 0.2em #00ff00;
+	}	
+
+-->
+</style>
+  
+  
 </head>
 <body $(if advert-pending == 'yes') onLoad="openAdvert()" $(endif)>
 	<div class="container">
@@ -49,26 +71,26 @@
       <div class="col-md-3"></div>
       <div class="col-md-6">
         $(if login-by == 'trial')
-          <h3 class="text-center mt-5 mb-3">Hola usuario Trial</h3>
+          <h3 class="text-center mt-5 mb-3">CONECTADO PIN Trial</h3>
         $(elif login-by != 'mac')
-        <h3 class="text-center mt-5 mb-3">Hola $(username)</h3>
+        <h3 class="text-center mt-5 mb-3">CONECTADO PIN $(username)</h3>
         $(endif)                
         <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
         <table class="table table-bordered table-striped mt-3 text-center">
           <tbody>
-            <tr><td>IP address</td><td>$(ip)</td></tr>
-            <tr><td>Bytes up / down</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+            <tr><td>IP direccion</td><td>$(ip)</td></tr>
+            <tr><td>Bytes Subida / Bajada</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
             $(if session-time-left)
-            <tr><td>Connected / left</td><td>$(uptime) / $(session-time-left)</td></tr>
+            <tr><td>ON / OFF</td><td>$(uptime) / $(session-time-left)</td></tr>
             $(else)
-            <tr><td>Connected</td><td>$(uptime)</td></tr>
+            <tr><td>Conectado</td><td>$(uptime)</td></tr>
             $(endif)
             $(if blocked == 'yes')
-            <tr><td>Status</td><td>
+            <tr><td>Estado</td><td>
             <a href="$(link-advert)" target="hotspot_advert">Advertisement required</a></td>
             </tr>
             $(elif refresh-timeout)
-            <tr><td>Status refresh</td><td>$(refresh-timeout)</td></tr>
+            <tr><td>Actualizacion</td><td>$(refresh-timeout)</td></tr>
             $(endif)
           </tbody>
         </table>
@@ -76,7 +98,8 @@
         <!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
         <button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
         <!-- end of user manager link -->
-        <input class="btn btn-success bnt-block col-md-12" type="submit" value="Ingresar">
+         <!--
+        <input class="btn btn-success bnt-block col-md-12" type="submit" value="Ingresar"> -->
         $(endif)
         </form>
       </div>
