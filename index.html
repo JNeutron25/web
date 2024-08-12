@@ -1,72 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta charset="utf-8">
-<title>Login</title>
-<meta http-equiv="pragma" content="no-cache" />
-<meta http-equiv="expires" content="-1" />	
-<meta content='width=device-width, user-scalable=no' name='viewport'/>
-<link rel="stylesheet" href="login.css" media="screen">
- 
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title >Cargando - ZonaWifi</title>
+    
+    
+    <meta name="description" content="Ejemplo en funcionamiento que te permite pulsar un botón para poner en marcha una barra de progreso."/>
+    <meta name="author" content="Jose Aguilar">
+    
+   
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class='login'>
-$(if chap-id)
-	<form name="sendin" action="$(link-login-only)" method="post">
-		<input type="hidden" name="username" />
-		<input type="hidden" name="password" />
-		<input type="hidden" name="dst" value="$(link-orig)" />
-		<input type="hidden" name="popup" value="true" />
-	</form>
-	
-	<script type="text/javascript" src="/md5.js"></script>
-	<script type="text/javascript">
-	<!--
-	    function doLogin() {
-		document.sendin.username.value = document.login.username.value;
-		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
-		document.sendin.submit();
-		return false;
-	    }
-	//-->
-	</script>
-$(endif)
+
+<script language="JavaScript">
+  function redireccionar() {
+    setTimeout("location.href='http://google.com'", 5000);
+  }
+  </script>
+
+<body  onLoad="moveProgressBar()" >
 
 
-<form class="vertical-form" name="login" action="$(link-login-only)" method="post" background="#A03472"
-	$(if chap-id) onSubmit="return doLogin()" $(endif)>
-<input type="hidden" name="dst" value="$(link-orig)" />
-<input type="hidden" name="popup" value="true" />
-<div style="margin:0;padding:0;display:inline"></div>
-<legend>
 
-<img class="logo" src="logoex.png" width="320px" />
-<img class="logo" src="logo.png" width="320px" />
-<aqui se puede escribir>
-</legend>
-<p style="text-align:center; color:#FFF"> Ingrese su codigo Pin: </p>
-<input name="username" type="text" value="$(username)" placeholder="PIN" size="30" />
+   
 
-<!--
-<input autocomplete="off" name="" type="password" label="false" placeholder="Contraseña" size="30" /> -->
+    <section   class="content">
+    <br>
+        <div class="card">
+        
+        <div align="center">
+           <img src="logoex.png">
+            </div>
+            
+            <br>
+            
+            
+            <div class="card-body move">
+            <h3>Cargando Pin..</h3>
+                <div class="progress">
+                
+                    <div id="myBar" class="progress-bar" style="width:0%;">
+                        <span class="progress-bar-text">0%</span>
+                    </div>
+                   <br>
+                   
+                    <h3>Gracias por su preferencia, espere unos segundos para validar su conexion..</h3> 
+                    
+                </div>
+                
+                
+                
+  <div class="progress-bar-action">
+   <button id="executeButton" ></button>
+                </div>
+                
+                
+            </div>
+            
+            
+            
+        </div>
+    </section>
 
-<input name="submit" type="submit" onClick="www.google.com" value=" " />
-
-<div class='footer'>
-
-<p>$(if trial == 'yes')Free trial available, <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click here</a>.$(endif)</p>
-
-<p>$(if error)<span style="color: #FFF; font-size: 16px; text-shadow:0 0 0.2em #FF0000, 0 0 0.2em #FF0000">$(error)</span>$(endif)</p>
-<br>
-<p>
-</p>
-</div>
-</form>
-
-<script type="text/javascript">
-<!--
-  document.login.username.focus();
-//-->
-</script>
+   
+    <script src="js/all.min" data-auto-replace-svg="nest"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
