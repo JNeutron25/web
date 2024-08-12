@@ -4,7 +4,7 @@
   $(if refresh-timeout)
   <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
   $(endif)
-	<title>ZonaWifi</title>
+	<title>ZonaWifi - Estado</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -46,7 +46,9 @@
   <style type="text/css">
 <!--
 
-
+img{
+	max-width: 20%; 
+	}
 body {
     background-color: #3686BB;
 }
@@ -73,6 +75,9 @@ h3 {
         $(if login-by == 'trial')
           <h3 class="text-center mt-5 mb-3">CONECTADO PIN Trial</h3>
         $(elif login-by != 'mac')
+        <div align="center">
+        <img src="conectado.png">
+        </div>
         <h3 class="text-center mt-5 mb-3">CONECTADO PIN $(username)</h3>
         $(endif)                
         <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
