@@ -148,7 +148,7 @@ section.breadcrumb ol li.breadcrumb-item::after {
     border: 1px solid rgba(0,0,0,.125);
     border-radius: 0.25rem;
     margin-bottom: 15px;
-	height: 500px;
+	height: auto;
 }
 
 .card-header {
